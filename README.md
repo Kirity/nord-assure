@@ -11,7 +11,7 @@ A static, responsive, bilingual website prototype for a Norwegian industrial cyb
    ```bash
    python3 -m http.server 5500
    ```
-4. Open `http://localhost:5500/` for English and `http://localhost:5500/no/` for Norwegian.
+4. Open `http://localhost:5500/` for Norwegian (redirects to `/no/`) or `http://localhost:5500/en/` for English.
 
 The site also works by double-clicking `index.html`, but a local HTTP server is the more realistic development preview.
 
@@ -19,11 +19,14 @@ The site also works by double-clicking `index.html`, but a local HTTP server is 
 
 ```text
 nord-assure-v3/
-├── index.html                           English homepage
+├── index.html                           Redirect to Norwegian homepage
+├── en/
+│   ├── index.html                       English homepage
+│   └── privacy.html                     English draft privacy notice
 ├── no/
 │   ├── index.html                       Norwegian homepage
 │   └── privacy.html                     Norwegian draft privacy notice
-├── privacy.html                         English draft privacy notice
+├── privacy.html                         Redirect old English privacy URL
 ├── assets/
 │   ├── css/styles.css                   All layout, responsive design, motion
 │   ├── js/main.js                       Menu, tabs, animation, enquiry form
@@ -74,7 +77,7 @@ Do not place passwords, private API keys, customer evidence or secrets into this
 
 ## Editing tips
 
-- Change content in `index.html` (EN) and `no/index.html` (NO); they are separate static pages and **must be kept in sync**.
+- Change content in `en/index.html` (EN) and `no/index.html` (NO); they are separate static pages and **must be kept in sync**.
 - Change colors, spacing, animations in `assets/css/styles.css`.
 - Change menu, report tabs and form interactions in `assets/js/main.js`.
 - Change public form-service URL in `assets/js/config.js`.
